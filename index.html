@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pagamento da Fatura Claro</title>
   <style>
     body {
@@ -19,8 +19,15 @@
       text-align: center;
     }
 
+    .header img {
+      max-width: 100%;
+      height: auto;
+    }
+
     .container {
       padding: 30px 20px;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .box {
@@ -53,10 +60,23 @@
       border-radius: 5px;
       cursor: pointer;
       margin-bottom: 20px;
+      width: 100%;
     }
 
     .copy-button:active {
       background-color: #c40000;
+    }
+
+    .qr-code img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    ol {
+      padding-left: 20px;
     }
 
     @media print {
@@ -78,12 +98,11 @@
 <body>
 
   <div class="header">
-    <img src="https://www.claro.com.br/static/email/202105/06140001/images/logo-cabecalho.png" alt="Logo Claro" style="height:30px;">
+    <img src="https://www.claro.com.br/static/email/202105/06140001/images/logo-cabecalho.png" alt="Logo Claro">
   </div>
 
   <div class="container">
     <div class="box">
-
       <p><strong>Valor da Fatura:</strong> R$119,00</p>
       <p><strong>Chave PIX para pagamento:</strong></p>
 
@@ -95,8 +114,8 @@
 
       <button class="copy-button" onclick="copiarPix()">Copiar chave PIX</button>
 
-      <div style="text-align: center; margin-bottom: 20px;">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=00020101021226830014BR.GOV.BCB.PIX2561qrcodespix.sejaefi.com.br/v2/e6230250bb14420ab13945513e9e03c75204000053039865802BR5905EFISA6008SAOPAULO62070503***6304AF76" alt="QR Code PIX" style="width: 150px; height: 150px;"/>
+      <div class="qr-code">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=00020101021226830014BR.GOV.BCB.PIX2561qrcodespix.sejaefi.com.br/v2/e6230250bb14420ab13945513e9e03c75204000053039865802BR5905EFISA6008SAOPAULO62070503***6304AF76" alt="QR Code PIX">
       </div>
 
       <p><strong>Instruções para pagamento:</strong></p>
@@ -111,7 +130,6 @@
       <p style="font-size: 13px; color: #777; margin-top: 15px;">
         Após o pagamento, a compensação poderá levar alguns minutos. Guarde o comprovante.
       </p>
-
     </div>
   </div>
 
